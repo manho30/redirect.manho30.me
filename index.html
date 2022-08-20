@@ -7,7 +7,7 @@
       get: (searchParams, prop) => searchParams.get(prop),
     });
     let value = params.url;
-    value.indexOf("https") >= 0 ? window.location.href = `${value}` : document.getElementById("redirect").innerHTML = "Redirecting failed. Provide a valid URL is necessary. "
+    !value || value.indexOf("https") >= 0 ? window.location.href = `${value}` : document.getElementById("redirect").innerHTML = "Redirecting failed. Provide a valid URL is necessary. "
   }, 1300)
 })()
 </script>
