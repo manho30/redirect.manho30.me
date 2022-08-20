@@ -11,7 +11,7 @@
       document.getElementById("redirect").innerHTML = "Redirecting failed."
       return;
     }
-    window.location.href = `${(value.indexOf("https") <= 0 ? 'https' : '')}${(value.indexOf("http") >= 0 && value.indexOf("https") <= 0 ? value.split("://")[0].join() + 's' : '')}${value}`
+    window.location.href = `/**${(value.indexOf("https") <= 0 ? 'https' : '')}${(value.indexOf("http") >= 0 && value.indexOf("https") <= 0 ? value.split("://")[0].join() + 's' : '')}**/${value}`
   }, 1300)
 })()
 </script>
