@@ -1,0 +1,18 @@
+<html>
+<h1 id="redirect">Redirecting you</h1>
+<script>
+(() =>  {
+  setTimeout(() =>{
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    });
+    let value = params.url;
+    if(!value){
+      document.getElementById("redirect").innerHTML = "Redirecting failed."
+      return;
+    }
+    window.location.href = `${(value.indexOf("https") <= 0 ? 'https' : '')}${(value.indexOf("http") >= 0 && value.indexOf("https") <= 0 ? value.split("://")[0].join() + 's' : '')}${value}`
+  }, 1300)
+})()
+</script>
+</html>
